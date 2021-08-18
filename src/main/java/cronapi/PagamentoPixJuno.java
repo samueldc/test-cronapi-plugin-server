@@ -18,12 +18,7 @@ import java.util.concurrent.Callable;
 @CronapiMetaData(categoryName = "Pagamento")
 public class PagamentoPixJuno {
 
-/**
- *
- * @param @ParamMetaData
- * @return Var
- */
-// Pagamento
+@CronapiMetaData(type = "function", name = "Pegar chave de acesso Juno", description = "Função que faz uma requisição à API da Juno para pegar a chave de acesso bearer.")
 public static Var getAccessToken(@ParamMetaData(description = "clientID") Var clientID, @ParamMetaData(description = "clientSecret") Var clientSecret) throws Exception {
  return new Callable<Var>() {
 
@@ -69,12 +64,7 @@ public static Var getAccessToken(@ParamMetaData(description = "clientID") Var cl
  }.call();
 }
 
-/**
- *
- * @param @ParamMetaData
- * @return Var
- */
-// Describe this function...
+@CronapiMetaData(type = "function", name = "Gerar nova chave pix Juno", description = "Função que faz uma requisição à API da Juno para gerar uma nova chave pix.")
 public static Var getPixKey(@ParamMetaData(description = "clientID") Var clientID, @ParamMetaData(description = "clientSecret") Var clientSecret, @ParamMetaData(description = "resourceToken") Var resourceToken) throws Exception {
  return new Callable<Var>() {
 
